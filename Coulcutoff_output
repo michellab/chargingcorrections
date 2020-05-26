@@ -1,0 +1,54 @@
+[22;0t]0;IPython: discharge/output### Running electrostatics correction calculation on unknown ###
+Ions are included in the calculation
+Create the System...
+Selecting dummy groups
+lambda is 0.0
+#Processing frame 1 
+# Direct summation
+#Psum correction... 
+
+==============================================================
+Sending anonymous Sire usage statistics to http://siremol.org.
+For more information, see http://siremol.org/analytics
+To disable, set the environment variable 'SIRE_DONT_PHONEHOME' to 1
+To see the information sent, set the environment variable 
+SIRE_VERBOSE_PHONEHOME equal to 1. To silence this message, set
+the environment variable SIRE_SILENT_PHONEHOME to 1.
+==============================================================
+
+lambda is 0.05
+#Processing frame 1 
+# Direct summation
+lambda is 0.1
+#Processing frame 1 
+# Direct summation
+lambda is 0.2
+#Processing frame 1 
+# Direct summation
+lambda is 0.3
+#Processing frame 1 
+# Direct summation
+lambda is 0.4
+#Processing frame 1 
+# Direct summation
+lambda is 0.5
+#Processing frame 1 
+# Direct summation
+lambda is 0.6
+#Processing frame 1 
+# Direct summation
+lambda is 0.7
+#Processing frame 1 
+# Direct summation
+lambda is 0.8
+#Processing frame 1 
+# Direct summation
+lambda is 0.9
+#Processing frame 1 
+# Direct summation
+lambda is 1.0
+#Processing frame 1 
+# Direct summation
+DG_dir per increasing lambda value : [-86.10897809219381, -73.44105392674629, -64.3507161064365, -59.15736585668975, -54.0207174836259, -49.0862049652892, -44.17420545975517, -40.853940755585654, -37.35291677731291, -34.08302108823716, -31.306471067710476, -28.69759847873462]
+DG_dir =  -47.08944512598225 kcal mol-1
+DG_psum =  [15.64253557803379, 0.0] kcal mol-1
