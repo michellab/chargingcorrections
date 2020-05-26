@@ -1,0 +1,1325 @@
+# READ: schemeELEC RF
+# READ: rcut 1.2
+# READ: probe_rad 0.14
+# READ: hydrogen_rad 0.05
+# READ: radscal 1
+# READ: epssolvent 82
+# READ: epsRF 82
+# READ: epsNPBC 78.4
+# READ: gridspacing 0.1
+# READ: maxiter 600
+# READ: fftcub 4
+# READ: atomsTOcharge 
+# READ: mol 0 O1
+# READ: mol 0 C7
+# READ: mol 0 O2
+# READ: mol 0 C3
+# Calculated number of gridpoints PBC (x,y,z): 31 34 36
+# Calculated number of gridpoints NPBC (x,y,z): 71 74 76
+# initialising PB_Parameters using epsilon of 82 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1
+# PB_PARAMS: tiny_real 1e-10
+# PB_PARAMS: tinfoil_boundary 0
+# PB_PARAMS: vacuum_boundary 1
+# PB_PARAMS: adjusted_boundary 82
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.05
+# PB_PARAMS: alpha1 0.15
+# PB_PARAMS: alpha2 0.05
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.5
+# PB_PARAMS: kappa 0
+# PB_PARAMS: convergence_fd 1e-06
+# PB_PARAMS: convergence_fft 0.3
+# PB_PARAMS: quadr 0.0082
+# PB_PARAMS: tole 1e-06
+# PB_PARAMS: rcut 0.9
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.8373
+# radius of atom 0 : rad(i) = 0.22731
+# radius of atom 1 : rad(i) = 0.23793
+# radius of atom 2 : rad(i) = 0.22731
+# radius of atom 3 : rad(i) = 0.23793
+# radius of atom 4 : rad(i) = 0.23793
+# radius of atom 5 : rad(i) = 0.23793
+# radius of atom 6 : rad(i) = 0.23793
+# radius of atom 7 : rad(i) = 0.23793
+# radius of atom 8 : rad(i) = 0.23793
+# radius of atom 9 : rad(i) = 0.2033
+# radius of atom 10 : rad(i) = 0.23793
+# radius of atom 11 : rad(i) = 0.19861
+# radius of atom 12 : rad(i) = 0.23793
+# radius of atom 13 : rad(i) = 0.16767
+# radius of atom 14 : rad(i) = 0.16767
+# radius of atom 15 : rad(i) = 0.16767
+# radius of atom 16 : rad(i) = 0.16767
+# radius of atom 17 : rad(i) = 0.16767
+# radius of atom 18 : rad(i) = 0.16767
+# radius of atom 19 : rad(i) = 0.16767
+# radius of atom_to_charge 0 : rad(i) = 0.22731
+# radius of atom_to_charge 1 : rad(i) = 0.23793
+# radius of atom_to_charge 2 : rad(i) = 0.22731
+# radius of atom_to_charge 3 : rad(i) = 0.23793
+# ************************************************** 
+# *** FD LS NPBC EPSSOLV *** 
+# ************************************************** 
+# initialising PB_Parameters using epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1
+# PB_PARAMS: tiny_real 1e-10
+# PB_PARAMS: tinfoil_boundary 0
+# PB_PARAMS: vacuum_boundary 1
+# PB_PARAMS: adjusted_boundary 78.4
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.05
+# PB_PARAMS: alpha1 0.15
+# PB_PARAMS: alpha2 0.05
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.5
+# PB_PARAMS: kappa 0
+# PB_PARAMS: convergence_fd 1e-06
+# PB_PARAMS: convergence_fft 0.3
+# PB_PARAMS: quadr 0.0082
+# PB_PARAMS: tole 1e-06
+# PB_PARAMS: rcut 0.9
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.8373
+# gridspacing 0.1
+# GPX 71
+# GPY 74
+# GPZ 76
+# epssolvent 78.4
+# atom 1 charge -0
+# atom 1 radius 0.22731
+# atom 2 charge 0
+# atom 2 radius 0.23793
+# atom 3 charge -0
+# atom 3 radius 0.22731
+# atom 4 charge -0
+# atom 4 radius 0.23793
+# Calculating new gridcenter
+# mincoordinates of all atoms: 1.378 0.8898 1.4014
+# maxcoordinates of all atoms: 2.0169 1.4073 1.894
+# GPX 71
+# GPY 74
+# GPZ 76
+# Calculating new gridstart
+# gridstart[0] -1.90255
+# gridstart[1] -2.60145
+# gridstart[2] -2.2023
+# gridcenter x,y,z = 1.69745 1.14855 1.6477
+# gridstart x,y,z = -1.90255 -2.60145 -2.2023
+# gridspacing 0.1
+
+# Now doing a GRIDCHECK for all atoms with try and catch procedure for the case that anywthing went wrong
+# GRIDCHECK for atom 1 radius 0.22731 charge -0 pos 1.7303 0.8898 1.4987
+# GRIDCHECK for atom 2 radius 0.23793 charge 0 pos 1.7793 0.9989 1.4757
+# GRIDCHECK for atom 3 radius 0.22731 charge -0 pos 1.8848 1.0265 1.4213
+# GRIDCHECK for atom 4 radius 0.23793 charge -0 pos 1.6994 1.1161 1.5214
+# GRIDCHECK for atom 5 radius 0.23793 charge -0 pos 1.5686 1.1351 1.4757
+# GRIDCHECK for atom 6 radius 0.23793 charge -0 pos 1.4832 1.2385 1.5153
+# GRIDCHECK for atom 7 radius 0.23793 charge -0 pos 1.5398 1.3278 1.6068
+# GRIDCHECK for atom 8 radius 0.23793 charge -0 pos 1.6752 1.3304 1.6417
+# GRIDCHECK for atom 9 radius 0.23793 charge 0 pos 1.7488 1.2179 1.6035
+# GRIDCHECK for atom 10 radius 0.2033 charge -0 pos 1.874 1.1992 1.6561
+# GRIDCHECK for atom 11 radius 0.23793 charge 0 pos 1.9017 1.128 1.7684
+# GRIDCHECK for atom 12 radius 0.19861 charge -0 pos 2.0169 1.1097 1.8034
+# GRIDCHECK for atom 13 radius 0.23793 charge -0 pos 1.7901 1.0291 1.8002
+# GRIDCHECK for atom 14 radius 0.16767 charge 0 pos 1.7947 0.946 1.7288
+# GRIDCHECK for atom 15 radius 0.16767 charge 0 pos 1.8183 0.9796 1.894
+# GRIDCHECK for atom 16 radius 0.16767 charge 0 pos 1.6871 1.0639 1.815
+# GRIDCHECK for atom 17 radius 0.16767 charge 0 pos 1.5276 1.0675 1.4014
+# GRIDCHECK for atom 18 radius 0.16767 charge 0 pos 1.378 1.2432 1.4888
+# GRIDCHECK for atom 19 radius 0.16767 charge 0 pos 1.4743 1.4073 1.641
+# GRIDCHECK for atom 20 radius 0.16767 charge 0 pos 1.7066 1.3957 1.7226
+# @chargegridtrilinear: znorm : 0
+# Entering FDPoissonBoltzmann::DebyeHueckel ...
+# @ ZNORM 0
+# CONVERGED AFTER 1 iterations...
+# Exit: solveforpotential()
+# Average potential [kJ/mol] 0
+# atom  1 charge -0 ele. pot. 0
+# atom  2 charge 0 ele. pot. 0
+# atom  3 charge -0 ele. pot. 0
+# atom  4 charge -0 ele. pot. 0
+# DG RETURNED [kJ/mol]: 0
+# ************************************************** 
+# *** FD LS NPBC VAC *** 
+# ************************************************** 
+# initialising PB_Parameters using epsilon of 1 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1
+# PB_PARAMS: tiny_real 1e-10
+# PB_PARAMS: tinfoil_boundary 0
+# PB_PARAMS: vacuum_boundary 1
+# PB_PARAMS: adjusted_boundary 1
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.05
+# PB_PARAMS: alpha1 0.15
+# PB_PARAMS: alpha2 0.05
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.5
+# PB_PARAMS: kappa 0
+# PB_PARAMS: convergence_fd 1e-06
+# PB_PARAMS: convergence_fft 0.3
+# PB_PARAMS: quadr 0.0082
+# PB_PARAMS: tole 1e-06
+# PB_PARAMS: rcut 0.9
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.8373
+# gridspacing 0.1
+# GPX 71
+# GPY 74
+# GPZ 76
+# epssolvent 1
+# atom 1 charge -0
+# atom 1 radius 0.22731
+# atom 2 charge 0
+# atom 2 radius 0.23793
+# atom 3 charge -0
+# atom 3 radius 0.22731
+# atom 4 charge -0
+# atom 4 radius 0.23793
+# GPX 71
+# GPY 74
+# GPZ 76
+# gridcenter x,y,z = 1.69745 1.14855 1.6477
+# gridstart x,y,z = -1.90255 -2.60145 -2.2023
+# gridspacing 0.1
+
+# Now doing a GRIDCHECK for all atoms with try and catch procedure for the case that anywthing went wrong
+# GRIDCHECK for atom 1 radius 0.22731 charge -0 pos 1.7303 0.8898 1.4987
+# GRIDCHECK for atom 2 radius 0.23793 charge 0 pos 1.7793 0.9989 1.4757
+# GRIDCHECK for atom 3 radius 0.22731 charge -0 pos 1.8848 1.0265 1.4213
+# GRIDCHECK for atom 4 radius 0.23793 charge -0 pos 1.6994 1.1161 1.5214
+# GRIDCHECK for atom 5 radius 0.23793 charge -0 pos 1.5686 1.1351 1.4757
+# GRIDCHECK for atom 6 radius 0.23793 charge -0 pos 1.4832 1.2385 1.5153
+# GRIDCHECK for atom 7 radius 0.23793 charge -0 pos 1.5398 1.3278 1.6068
+# GRIDCHECK for atom 8 radius 0.23793 charge -0 pos 1.6752 1.3304 1.6417
+# GRIDCHECK for atom 9 radius 0.23793 charge 0 pos 1.7488 1.2179 1.6035
+# GRIDCHECK for atom 10 radius 0.2033 charge -0 pos 1.874 1.1992 1.6561
+# GRIDCHECK for atom 11 radius 0.23793 charge 0 pos 1.9017 1.128 1.7684
+# GRIDCHECK for atom 12 radius 0.19861 charge -0 pos 2.0169 1.1097 1.8034
+# GRIDCHECK for atom 13 radius 0.23793 charge -0 pos 1.7901 1.0291 1.8002
+# GRIDCHECK for atom 14 radius 0.16767 charge 0 pos 1.7947 0.946 1.7288
+# GRIDCHECK for atom 15 radius 0.16767 charge 0 pos 1.8183 0.9796 1.894
+# GRIDCHECK for atom 16 radius 0.16767 charge 0 pos 1.6871 1.0639 1.815
+# GRIDCHECK for atom 17 radius 0.16767 charge 0 pos 1.5276 1.0675 1.4014
+# GRIDCHECK for atom 18 radius 0.16767 charge 0 pos 1.378 1.2432 1.4888
+# GRIDCHECK for atom 19 radius 0.16767 charge 0 pos 1.4743 1.4073 1.641
+# GRIDCHECK for atom 20 radius 0.16767 charge 0 pos 1.7066 1.3957 1.7226
+# @chargegridtrilinear: znorm : 0
+# Entering FDPoissonBoltzmann::DebyeHueckel ...
+# @ ZNORM 0
+# CONVERGED AFTER 1 iterations...
+# Exit: solveforpotential()
+# Average potential [kJ/mol] 0
+# atom  1 charge -0 ele. pot. 0
+# atom  2 charge 0 ele. pot. 0
+# atom  3 charge -0 ele. pot. 0
+# atom  4 charge -0 ele. pot. 0
+# DG RETURNED [kJ/mol]: 0
+# DGRESULT NPBC 0
+# ************************************************** 
+# *** FD LS PBC EPSSOLV *** 
+# ************************************************** 
+# initialising PB_Parameters using epsilon of 82 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1
+# PB_PARAMS: tiny_real 1e-10
+# PB_PARAMS: tinfoil_boundary 0
+# PB_PARAMS: vacuum_boundary 1
+# PB_PARAMS: adjusted_boundary 82
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.05
+# PB_PARAMS: alpha1 0.15
+# PB_PARAMS: alpha2 0.05
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.5
+# PB_PARAMS: kappa 0
+# PB_PARAMS: convergence_fd 1e-06
+# PB_PARAMS: convergence_fft 0.3
+# PB_PARAMS: quadr 0.0082
+# PB_PARAMS: tole 1e-06
+# PB_PARAMS: rcut 0.9
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.8373
+# gridspacing 0.1
+# GPX 31
+# GPY 34
+# GPZ 36
+# epssolvent 82
+# atom 1 charge -0
+# atom 1 radius 0.22731
+# atom 2 charge 0
+# atom 2 radius 0.23793
+# atom 3 charge -0
+# atom 3 radius 0.22731
+# atom 4 charge -0
+# atom 4 radius 0.23793
+# GPX 31
+# GPY 34
+# GPZ 36
+# Calculating new gridstart
+# gridstart[0] 0.09745
+# gridstart[1] -0.60145
+# gridstart[2] -0.2023
+# gridcenter x,y,z = 1.69745 1.14855 1.6477
+# gridstart x,y,z = 0.09745 -0.60145 -0.2023
+# gridspacing 0.1
+
+# Now doing a GRIDCHECK for all atoms with potential shrinking of radii when atoms are near the border of the box
+# GRIDCHECK for atom 1 radius 0.2273100 charge -0.000 pos 1.730 0.890 1.499
+# GRIDCHECK for atom 2 radius 0.2379300 charge  0.000 pos 1.779 0.999 1.476
+# GRIDCHECK for atom 3 radius 0.2273100 charge -0.000 pos 1.885 1.026 1.421
+# GRIDCHECK for atom 4 radius 0.2379300 charge -0.000 pos 1.699 1.116 1.521
+# GRIDCHECK for atom 5 radius 0.2379300 charge -0.000 pos 1.569 1.135 1.476
+# GRIDCHECK for atom 6 radius 0.2379300 charge -0.000 pos 1.483 1.238 1.515
+# GRIDCHECK for atom 7 radius 0.2379300 charge -0.000 pos 1.540 1.328 1.607
+# GRIDCHECK for atom 8 radius 0.2379300 charge -0.000 pos 1.675 1.330 1.642
+# GRIDCHECK for atom 9 radius 0.2379300 charge  0.000 pos 1.749 1.218 1.603
+# GRIDCHECK for atom 10 radius 0.2033000 charge -0.000 pos 1.874 1.199 1.656
+# GRIDCHECK for atom 11 radius 0.2379300 charge  0.000 pos 1.902 1.128 1.768
+# GRIDCHECK for atom 12 radius 0.1986100 charge -0.000 pos 2.017 1.110 1.803
+# GRIDCHECK for atom 13 radius 0.2379300 charge -0.000 pos 1.790 1.029 1.800
+# GRIDCHECK for atom 14 radius 0.1676700 charge  0.000 pos 1.795 0.946 1.729
+# GRIDCHECK for atom 15 radius 0.1676700 charge  0.000 pos 1.818 0.980 1.894
+# GRIDCHECK for atom 16 radius 0.1676700 charge  0.000 pos 1.687 1.064 1.815
+# GRIDCHECK for atom 17 radius 0.1676700 charge  0.000 pos 1.528 1.068 1.401
+# GRIDCHECK for atom 18 radius 0.1676700 charge  0.000 pos 1.378 1.243 1.489
+# GRIDCHECK for atom 19 radius 0.1676700 charge  0.000 pos 1.474 1.407 1.641
+# GRIDCHECK for atom 20 radius 0.1676700 charge  0.000 pos 1.707 1.396 1.723
+
+# Now doing a GRIDCHECK for all atoms with try and catch procedure for the case that anywthing went wrong
+# GRIDCHECK for atom 1 radius 0.227 charge -0.000 pos 1.730 0.890 1.499
+# GRIDCHECK for atom 2 radius 0.238 charge 0.000 pos 1.779 0.999 1.476
+# GRIDCHECK for atom 3 radius 0.227 charge -0.000 pos 1.885 1.026 1.421
+# GRIDCHECK for atom 4 radius 0.238 charge -0.000 pos 1.699 1.116 1.521
+# GRIDCHECK for atom 5 radius 0.238 charge -0.000 pos 1.569 1.135 1.476
+# GRIDCHECK for atom 6 radius 0.238 charge -0.000 pos 1.483 1.238 1.515
+# GRIDCHECK for atom 7 radius 0.238 charge -0.000 pos 1.540 1.328 1.607
+# GRIDCHECK for atom 8 radius 0.238 charge -0.000 pos 1.675 1.330 1.642
+# GRIDCHECK for atom 9 radius 0.238 charge 0.000 pos 1.749 1.218 1.603
+# GRIDCHECK for atom 10 radius 0.203 charge -0.000 pos 1.874 1.199 1.656
+# GRIDCHECK for atom 11 radius 0.238 charge 0.000 pos 1.902 1.128 1.768
+# GRIDCHECK for atom 12 radius 0.199 charge -0.000 pos 2.017 1.110 1.803
+# GRIDCHECK for atom 13 radius 0.238 charge -0.000 pos 1.790 1.029 1.800
+# GRIDCHECK for atom 14 radius 0.168 charge 0.000 pos 1.795 0.946 1.729
+# GRIDCHECK for atom 15 radius 0.168 charge 0.000 pos 1.818 0.980 1.894
+# GRIDCHECK for atom 16 radius 0.168 charge 0.000 pos 1.687 1.064 1.815
+# GRIDCHECK for atom 17 radius 0.168 charge 0.000 pos 1.528 1.068 1.401
+# GRIDCHECK for atom 18 radius 0.168 charge 0.000 pos 1.378 1.243 1.489
+# GRIDCHECK for atom 19 radius 0.168 charge 0.000 pos 1.474 1.407 1.641
+# GRIDCHECK for atom 20 radius 0.168 charge 0.000 pos 1.707 1.396 1.723
+# @@@@@@@@@@@@@@@ pbc-> subtract aver 
+# @chargegridtrilinear: znorm : 0.000
+# @ ZNORM 0.000
+# CONVERGED AFTER 1 iterations...
+# Exit: solveforpotential()
+# Average potential [kJ/mol] 0.000
+# AVERAGE POTENTIAL SUBTRACTED [kJ/mol]: 0.000 -> 0.000
+# atom  1 charge -0.000 ele. pot. 0.000
+# atom  2 charge 0.000 ele. pot. 0.000
+# atom  3 charge -0.000 ele. pot. 0.000
+# atom  4 charge -0.000 ele. pot. 0.000
+# DG RETURNED [kJ/mol]: 0.000
+# ************************************************** 
+# *** FD LS PBC VAC *** 
+# ************************************************** 
+# initialising PB_Parameters using epsilon of 1.000 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 1.000
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# gridspacing 0.100
+# GPX 31
+# GPY 34
+# GPZ 36
+# epssolvent 1.000
+# atom 1 charge -0.000
+# atom 1 radius 0.227
+# atom 2 charge 0.000
+# atom 2 radius 0.238
+# atom 3 charge -0.000
+# atom 3 radius 0.227
+# atom 4 charge -0.000
+# atom 4 radius 0.238
+# GPX 31
+# GPY 34
+# GPZ 36
+# Calculating new gridstart
+# gridstart[0] 0.097
+# gridstart[1] -0.601
+# gridstart[2] -0.202
+# gridcenter x,y,z = 1.697 1.149 1.648
+# gridstart x,y,z = 0.097 -0.601 -0.202
+# gridspacing 0.100
+
+# Now doing a GRIDCHECK for all atoms with potential shrinking of radii when atoms are near the border of the box
+# GRIDCHECK for atom 1 radius 0.2273100 charge -0.000 pos 1.730 0.890 1.499
+# GRIDCHECK for atom 2 radius 0.2379300 charge  0.000 pos 1.779 0.999 1.476
+# GRIDCHECK for atom 3 radius 0.2273100 charge -0.000 pos 1.885 1.026 1.421
+# GRIDCHECK for atom 4 radius 0.2379300 charge -0.000 pos 1.699 1.116 1.521
+# GRIDCHECK for atom 5 radius 0.2379300 charge -0.000 pos 1.569 1.135 1.476
+# GRIDCHECK for atom 6 radius 0.2379300 charge -0.000 pos 1.483 1.238 1.515
+# GRIDCHECK for atom 7 radius 0.2379300 charge -0.000 pos 1.540 1.328 1.607
+# GRIDCHECK for atom 8 radius 0.2379300 charge -0.000 pos 1.675 1.330 1.642
+# GRIDCHECK for atom 9 radius 0.2379300 charge  0.000 pos 1.749 1.218 1.603
+# GRIDCHECK for atom 10 radius 0.2033000 charge -0.000 pos 1.874 1.199 1.656
+# GRIDCHECK for atom 11 radius 0.2379300 charge  0.000 pos 1.902 1.128 1.768
+# GRIDCHECK for atom 12 radius 0.1986100 charge -0.000 pos 2.017 1.110 1.803
+# GRIDCHECK for atom 13 radius 0.2379300 charge -0.000 pos 1.790 1.029 1.800
+# GRIDCHECK for atom 14 radius 0.1676700 charge  0.000 pos 1.795 0.946 1.729
+# GRIDCHECK for atom 15 radius 0.1676700 charge  0.000 pos 1.818 0.980 1.894
+# GRIDCHECK for atom 16 radius 0.1676700 charge  0.000 pos 1.687 1.064 1.815
+# GRIDCHECK for atom 17 radius 0.1676700 charge  0.000 pos 1.528 1.068 1.401
+# GRIDCHECK for atom 18 radius 0.1676700 charge  0.000 pos 1.378 1.243 1.489
+# GRIDCHECK for atom 19 radius 0.1676700 charge  0.000 pos 1.474 1.407 1.641
+# GRIDCHECK for atom 20 radius 0.1676700 charge  0.000 pos 1.707 1.396 1.723
+
+# Now doing a GRIDCHECK for all atoms with try and catch procedure for the case that anywthing went wrong
+# GRIDCHECK for atom 1 radius 0.227 charge -0.000 pos 1.730 0.890 1.499
+# GRIDCHECK for atom 2 radius 0.238 charge 0.000 pos 1.779 0.999 1.476
+# GRIDCHECK for atom 3 radius 0.227 charge -0.000 pos 1.885 1.026 1.421
+# GRIDCHECK for atom 4 radius 0.238 charge -0.000 pos 1.699 1.116 1.521
+# GRIDCHECK for atom 5 radius 0.238 charge -0.000 pos 1.569 1.135 1.476
+# GRIDCHECK for atom 6 radius 0.238 charge -0.000 pos 1.483 1.238 1.515
+# GRIDCHECK for atom 7 radius 0.238 charge -0.000 pos 1.540 1.328 1.607
+# GRIDCHECK for atom 8 radius 0.238 charge -0.000 pos 1.675 1.330 1.642
+# GRIDCHECK for atom 9 radius 0.238 charge 0.000 pos 1.749 1.218 1.603
+# GRIDCHECK for atom 10 radius 0.203 charge -0.000 pos 1.874 1.199 1.656
+# GRIDCHECK for atom 11 radius 0.238 charge 0.000 pos 1.902 1.128 1.768
+# GRIDCHECK for atom 12 radius 0.199 charge -0.000 pos 2.017 1.110 1.803
+# GRIDCHECK for atom 13 radius 0.238 charge -0.000 pos 1.790 1.029 1.800
+# GRIDCHECK for atom 14 radius 0.168 charge 0.000 pos 1.795 0.946 1.729
+# GRIDCHECK for atom 15 radius 0.168 charge 0.000 pos 1.818 0.980 1.894
+# GRIDCHECK for atom 16 radius 0.168 charge 0.000 pos 1.687 1.064 1.815
+# GRIDCHECK for atom 17 radius 0.168 charge 0.000 pos 1.528 1.068 1.401
+# GRIDCHECK for atom 18 radius 0.168 charge 0.000 pos 1.378 1.243 1.489
+# GRIDCHECK for atom 19 radius 0.168 charge 0.000 pos 1.474 1.407 1.641
+# GRIDCHECK for atom 20 radius 0.168 charge 0.000 pos 1.707 1.396 1.723
+# @@@@@@@@@@@@@@@ pbc-> subtract aver 
+# @chargegridtrilinear: znorm : 0.000
+# @ ZNORM 0.000
+# CONVERGED AFTER 1 iterations...
+# Exit: solveforpotential()
+# Average potential [kJ/mol] 0.000
+# AVERAGE POTENTIAL SUBTRACTED [kJ/mol]: 0.000 -> 0.000
+# atom  1 charge -0.000 ele. pot. 0.000
+# atom  2 charge 0.000 ele. pot. 0.000
+# atom  3 charge -0.000 ele. pot. 0.000
+# atom  4 charge -0.000 ele. pot. 0.000
+# DG RETURNED [kJ/mol]: 0.000
+# DGRESULT PBC 0.000
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# ************************************************** 
+# *** FFT LS (PBC) *** 
+# ************************************************** 
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# BOUNDARY PARAMETERS
+# -------------------
+# TYPE 0
+# STYPE LS
+# HAT CHARGE SHAPING FUNCTION
+# ALPHA1: 0.150
+# ALPHA2: 0.050
+# NALIAS1: 2
+# NALIAS2: 8
+# initialising PB_Parameters using epsilon of 82.000 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 82.000
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# initialising PB_Parameters using epsilon of 82.000 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 82.000
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# FFTPoissonIterator: lambda 1.500
+# FFTPoissonIterator: maxsteps 600
+# FFTPoissonIterator: ls_boundary_eps 0.000
+# FFTPoissonIterator: rf_boundary_eps 82.000
+# FFTPoissonIterator: sc_boundary_eps 1.000
+# FFTPoissonIterator: epssolvent 82.000
+# FFTPoissonIterator: get InterxTensor for LS 
+# initialising PB_Parameters using epsilon of 82.000 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 82.000
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# FFTDipoleDipole: epsS 82.000
+# FFTDipoleDipole: epsB 0.000
+# initialising PB_Parameters using epsilon of 82.000 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 82.000
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# FFTPoissonIterator setup ... make fftplans 
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# epssolvent 82.000
+# atom 0 charge -0.000
+# atom 0 radius 0.227
+# atom 1 charge 0.000
+# atom 1 radius 0.238
+# atom 2 charge -0.000
+# atom 2 radius 0.227
+# atom 3 charge -0.000
+# atom 3 radius 0.238
+# FFTPoisson setup ... center atoms 
+# initial min max center x,y,z = 1.697 1.149 1.648
+translation vector x,y,z = -0.147 0.551 0.152
+# gridcenter x,y,z = 1.550 1.700 1.800
+# final mmcenterAtoms (after centering on grid) x,y,z = 1.550 1.700 1.800
+# call solve_poisson ...
+# GRIDCHECK for atom 1 radius 0.2273100 charge -0.000 pos 1.583 1.441 1.651
+# GRIDCHECK for atom 2 radius 0.2379300 charge  0.000 pos 1.632 1.550 1.628
+# GRIDCHECK for atom 3 radius 0.2273100 charge -0.000 pos 1.737 1.578 1.574
+# GRIDCHECK for atom 4 radius 0.2379300 charge -0.000 pos 1.552 1.668 1.674
+# GRIDCHECK for atom 5 radius 0.2379300 charge -0.000 pos 1.421 1.687 1.628
+# GRIDCHECK for atom 6 radius 0.2379300 charge -0.000 pos 1.336 1.790 1.668
+# GRIDCHECK for atom 7 radius 0.2379300 charge -0.000 pos 1.392 1.879 1.759
+# GRIDCHECK for atom 8 radius 0.2379300 charge -0.000 pos 1.528 1.882 1.794
+# GRIDCHECK for atom 9 radius 0.2379300 charge  0.000 pos 1.601 1.769 1.756
+# GRIDCHECK for atom 10 radius 0.2033000 charge -0.000 pos 1.727 1.751 1.808
+# GRIDCHECK for atom 11 radius 0.2379300 charge  0.000 pos 1.754 1.679 1.921
+# GRIDCHECK for atom 12 radius 0.1986100 charge -0.000 pos 1.869 1.661 1.956
+# GRIDCHECK for atom 13 radius 0.2379300 charge -0.000 pos 1.643 1.581 1.952
+# GRIDCHECK for atom 14 radius 0.1676700 charge  0.000 pos 1.647 1.497 1.881
+# GRIDCHECK for atom 15 radius 0.1676700 charge  0.000 pos 1.671 1.531 2.046
+# GRIDCHECK for atom 16 radius 0.1676700 charge  0.000 pos 1.540 1.615 1.967
+# GRIDCHECK for atom 17 radius 0.1676700 charge  0.000 pos 1.380 1.619 1.554
+# GRIDCHECK for atom 18 radius 0.1676700 charge  0.000 pos 1.231 1.795 1.641
+# GRIDCHECK for atom 19 radius 0.1676700 charge  0.000 pos 1.327 1.959 1.793
+# GRIDCHECK for atom 20 radius 0.1676700 charge  0.000 pos 1.559 1.947 1.875
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# FFTPoisson setup ...  insideoutside
+# FFTPoisson setup ... done insideoutside
+# FFTPoisson setup ... grid
+# FFTPoisson setup ... done gridresizing
+# FFTPoisson setup ... setup vacfield 
+# setting up vacuum field ... 
+# bc.type is: 0
+# need LS field 
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# FFTVacuumField : cstype 0
+# FFTVacuumField : csfunc->HatType 0
+# FFTVacuumField : csfunc->ParabolaType 1
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# IONLIST 1: NUMBER OF ENTRIES: 0
+# IONLIST 2: NUMBER OF ENTRIES: 0
+# FFTVacuumField_LS::calcVacField :  Calculating vac field from scratch ...
+# after positionIndependentVacField: Vx1_store[0] 0.000
+# after positionIndependentVacField: Vy1_store[0] 0.000
+# after positionIndependentVacField: Vz1_store[0] 0.000
+# after positionIndependentVacField: Vx1_store[100] 0.000
+# after positionIndependentVacField: Vy1_store[100] 0.000
+# after positionIndependentVacField: Vz1_store[100] 0.000
+# FFTVacuumField_LS::recyclefield: Recycling vacuum field
+# after recyclefield: fldx_k[0] 0.000
+# after recyclefield: fldy_k[0] 0.000
+# after recyclefield: fldz_k[0] 0.000
+# after recyclefield: fldx_k[100] 0.000
+# after recyclefield: fldy_k[100] 0.000
+# after recyclefield: fldz_k[100] 0.000
+# after setupfield: vx[0] 0.000
+# after setupfield: vy[0] 0.000
+# after setupfield: vz[0] 0.000
+# after setupfield: vx[100] 0.000
+# after setupfield: vy[100] 0.000
+# after setupfield: vz[100] 0.000
+# FFTInsideOutside::integr_inside: gridpoints: 37944
+# FFTInsideOutside::integr_inside: inPoints_noB: 138
+# FFTInsideOutside::integr_inside: integral 285.104
+# FFTInsideOutside::integr_inside: normalized integral 0.008
+# START ITERATION ... 
+# ITER 1
+# lambda 1.500
+# done FT vacuum field 
+# FT_VFX 0.000 0.000 0.000
+# FT_VFY 0.000 0.000 0.000
+# FT_VFZ 0.000 0.000 0.000
+# done compute Efield from vacuum field 
+# FT_EFX 0.000 0.000 0.000
+# FT_EFY 0.000 0.000 0.000
+# FT_EFZ 0.000 0.000 0.000
+# RS_EFX 0.000 0.000 0.000
+# RS_EFY 0.000 0.000 0.000
+# RS_EFZ 0.000 0.000 0.000
+# POST_FT_EFX 0.000 0.000 0.000
+# POST_FT_EFY 0.000 0.000 0.000
+# POST_FT_EFZ 0.000 0.000 0.000
+# POST_RS_EFX 0.000 0.000 0.000
+# POST_RS_EFY 0.000 0.000 0.000
+# POST_RS_EFZ 0.000 0.000 0.000
+# atom  0 charge -0.000 ele. pot. 0.000
+# atom  1 charge 0.000 ele. pot. 0.000
+# atom  2 charge -0.000 ele. pot. 0.000
+# atom  3 charge -0.000 ele. pot. 0.000
+# Convergence after 1 steps with dG [kJ/mol]: 0.000
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# ************************************************** 
+# *** FFT RF (PBC) *** 
+# ************************************************** 
+# WITH REACTION FIELD CORRECTION : RF ... 
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# initialising PB_Parameters using epsilon of 82.000 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 82.000
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# initialising PB_Parameters using epsilon of 82.000 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 82.000
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# FFTPoissonIterator: lambda 1.500
+# FFTPoissonIterator: maxsteps 600
+# FFTPoissonIterator: ls_boundary_eps 0.000
+# FFTPoissonIterator: rf_boundary_eps 82.000
+# FFTPoissonIterator: sc_boundary_eps 1.000
+# FFTPoissonIterator: epssolvent 82.000
+# FFTPoissonIterator: get InterxTensor for RF 
+# initialising PB_Parameters using epsilon of 82.000 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 82.000
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# FFTDipoleDipole: epsS 82.000
+# FFTDipoleDipole: epsB 82.000
+# initialising PB_Parameters using epsilon of 82.000 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 82.000
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# FFTDipoleDipole: epsS 82.000
+# FFTDipoleDipole: epsB 82.000
+# FFTDipoleDipole_RF : epsB 82.000
+# FFTDipoleDipole_RF : epsS 82.000
+# initialising PB_Parameters using epsilon of 82.000 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 82.000
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# FFTChargeDipole_RF: epssolvent 82.000
+# FFTChargeDipole_RF: epsB 82.000
+# FFTPoissonIterator setup ... make fftplans 
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# epssolvent 82.000
+# atom 0 charge -0.000
+# atom 0 radius 0.227
+# atom 1 charge 0.000
+# atom 1 radius 0.238
+# atom 2 charge -0.000
+# atom 2 radius 0.227
+# atom 3 charge -0.000
+# atom 3 radius 0.238
+# BOUNDARY PARAMETERS
+# -------------------
+# TYPE 1
+# STYPE RF
+# HAT CHARGE SHAPING FUNCTION
+# ALPHA1: 0.150
+# ALPHA2: 0.050
+# NALIAS1: 2
+# NALIAS2: 8
+# call solve_poisson ...
+# GRIDCHECK for atom 1 radius 0.2273100 charge -0.000 pos 1.583 1.441 1.651
+# GRIDCHECK for atom 2 radius 0.2379300 charge  0.000 pos 1.632 1.550 1.628
+# GRIDCHECK for atom 3 radius 0.2273100 charge -0.000 pos 1.737 1.578 1.574
+# GRIDCHECK for atom 4 radius 0.2379300 charge -0.000 pos 1.552 1.668 1.674
+# GRIDCHECK for atom 5 radius 0.2379300 charge -0.000 pos 1.421 1.687 1.628
+# GRIDCHECK for atom 6 radius 0.2379300 charge -0.000 pos 1.336 1.790 1.668
+# GRIDCHECK for atom 7 radius 0.2379300 charge -0.000 pos 1.392 1.879 1.759
+# GRIDCHECK for atom 8 radius 0.2379300 charge -0.000 pos 1.528 1.882 1.794
+# GRIDCHECK for atom 9 radius 0.2379300 charge  0.000 pos 1.601 1.769 1.756
+# GRIDCHECK for atom 10 radius 0.2033000 charge -0.000 pos 1.727 1.751 1.808
+# GRIDCHECK for atom 11 radius 0.2379300 charge  0.000 pos 1.754 1.679 1.921
+# GRIDCHECK for atom 12 radius 0.1986100 charge -0.000 pos 1.869 1.661 1.956
+# GRIDCHECK for atom 13 radius 0.2379300 charge -0.000 pos 1.643 1.581 1.952
+# GRIDCHECK for atom 14 radius 0.1676700 charge  0.000 pos 1.647 1.497 1.881
+# GRIDCHECK for atom 15 radius 0.1676700 charge  0.000 pos 1.671 1.531 2.046
+# GRIDCHECK for atom 16 radius 0.1676700 charge  0.000 pos 1.540 1.615 1.967
+# GRIDCHECK for atom 17 radius 0.1676700 charge  0.000 pos 1.380 1.619 1.554
+# GRIDCHECK for atom 18 radius 0.1676700 charge  0.000 pos 1.231 1.795 1.641
+# GRIDCHECK for atom 19 radius 0.1676700 charge  0.000 pos 1.327 1.959 1.793
+# GRIDCHECK for atom 20 radius 0.1676700 charge  0.000 pos 1.559 1.947 1.875
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# FFTPoisson setup ...  insideoutside
+# FFTPoisson setup ... done insideoutside
+# FFTPoisson setup ... grid
+# FFTPoisson setup ... done gridresizing
+# FFTPoisson setup ... setup vacfield 
+# setting up vacuum field ... 
+# bc.type is: 1
+# need RF field 
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# initialising PB_Parameters using default epsilon of 78.4 for adjusted boundary conditions
+# PB_PARAMS: epssolute 1.000
+# PB_PARAMS: tiny_real 0.000
+# PB_PARAMS: tinfoil_boundary 0.000
+# PB_PARAMS: vacuum_boundary 1.000
+# PB_PARAMS: adjusted_boundary 78.400
+# PB_PARAMS: ddg_conv -0.001
+# PB_PARAMS: hradius 0.050
+# PB_PARAMS: alpha1 0.150
+# PB_PARAMS: alpha2 0.050
+# PB_PARAMS: nalias1 2
+# PB_PARAMS: nalias2 8
+# PB_PARAMS: FFTlambda 1.500
+# PB_PARAMS: kappa 0.000
+# PB_PARAMS: convergence_fd 0.000
+# PB_PARAMS: convergence_fft 0.300
+# PB_PARAMS: quadr 0.008
+# PB_PARAMS: tole 0.000
+# PB_PARAMS: rcut 0.900
+# PB_PARAMS: kmax 64
+# PB_PARAMS: xiew -2.837
+# computing vacuum field with epsilon 82.000
+# Warning: The vacuum field on a grid point hosting a particle will be set to zero ...
+# after setupfield: vx[0] 0.000
+# after setupfield: vy[0] 0.000
+# after setupfield: vz[0] 0.000
+# after setupfield: vx[100] 0.000
+# after setupfield: vy[100] 0.000
+# after setupfield: vz[100] 0.000
+# FFTInsideOutside::integr_inside: gridpoints: 37944
+# FFTInsideOutside::integr_inside: inPoints_noB: 138
+# FFTInsideOutside::integr_inside: integral 285.104
+# FFTInsideOutside::integr_inside: normalized integral 0.008
+# START ITERATION ... 
+# ITER 1
+# lambda 1.500
+# done FT vacuum field 
+# FT_VFX 0.000 0.000 0.000
+# FT_VFY 0.000 0.000 0.000
+# FT_VFZ 0.000 0.000 0.000
+# done compute Efield from vacuum field 
+# FT_EFX 0.000 0.000 0.000
+# FT_EFY 0.000 0.000 0.000
+# FT_EFZ 0.000 0.000 0.000
+# RS_EFX 0.000 0.000 0.000
+# RS_EFY 0.000 0.000 0.000
+# RS_EFZ 0.000 0.000 0.000
+# POST_FT_EFX 0.000 0.000 0.000
+# POST_FT_EFY 0.000 0.000 0.000
+# POST_FT_EFZ 0.000 0.000 0.000
+# POST_RS_EFX 0.000 0.000 0.000
+# POST_RS_EFY 0.000 0.000 0.000
+# POST_RS_EFZ 0.000 0.000 0.000
+# atom  0 charge -0.000 ele. pot. 0.000
+# atom  1 charge 0.000 ele. pot. 0.000
+# atom  2 charge -0.000 ele. pot. 0.000
+# atom  3 charge -0.000 ele. pot. 0.000
+# Convergence after 1 steps with dG [kJ/mol]: 0.000

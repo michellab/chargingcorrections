@@ -1,0 +1,10 @@
+@pqr ../pqr_snapshots/LIG_free_L_0.05.pqr
+@coordinates 3.053226162    3.385833362    3.554595941
+@atoms 1:a
+@atomsTOcharge 1:a
+@schemeELEC RF
+@rcut 1.2
+@epsRF 82
+@epsSOLV 82
+@gridspacing 0.1
+@verbose log_L_0.05.dat
