@@ -45,6 +45,7 @@ morphfile = Parameter("morphfile", "MORPH.pert",
 lambda_val = Parameter("lambda_val", 0.0,
                        """Value of the lambda parameter at which to evaluate free energy gradients.""")
 
+lambda_values = [0.000, 0.050, 0.100, 0.200, 0.300, 0.400, 0.500, 0.600, 0.700, 0.800, 0.900, 1.000]    
 
 shift_delta = Parameter("shift delta", 2.0,
                         """Value of the Lennard-Jones soft-core parameter.""")
@@ -1044,7 +1045,6 @@ def SummationCorrection2(solutes, solvent, solute_ref, space, rho_solvent_model,
     return DF_PSUM
 
 
-
 if __name__ == "__main__":
 
 
@@ -1057,7 +1057,7 @@ if __name__ == "__main__":
         print("###================= Simulation Parameters=====================###")
         Parameter.printAll()
         print ("###===========================================================###\n")
-    print("lambda is %s" % lambda_val.val)
+    
 
     if os.path.exists(s3file.val):
         (molecules, space) = Sire.Stream.load(s3file.val)
@@ -1074,7 +1074,8 @@ if __name__ == "__main__":
     else:
         ion_residues=[]
         print("Ions are included in the calculation")
-
+        
+    
     # What to do with this...
     system = createSystemFreeEnergy(molecules)
     lam = Symbol("lambda")
@@ -1083,149 +1084,126 @@ if __name__ == "__main__":
     system.setConstant(lam, lambda_val.val)
     system.add(PerturbationConstraint(solutes))
     system.setComponent(lam, lambda_val.val)
-
-    DG_CB_NP_HG_list = []
-    DG_CB_NP_H_list = []
-
-    DG_BA_PBC_HG_list = []
-    DG_BA_PBC_H_list = []
-
-    U_dir_CB_list = []
-    U_dir_BA_list = []
+    
+    
+    U_dir_NP_lambda_list = []
+    U_dir_PBC_lambda_list = []
 
     DG_PSUM_list= []
 
     DG_COR = []
-
-
-    # Now loop over snapshots in dcd and accumulate energies
-    start_frame = 1
-    end_frame = 1000000000
-    step_frame = stepframe.val
-
-    #mdtraj_trajfile = mdtraj.open("../lambda-0.000/traj000000001.dcd",'r')
-    mdtraj_trajfile = mdtraj.open(trajfile.val,'r')
-    nframes = len(mdtraj_trajfile)
-
-    if end_frame > (nframes - 1):
-        end_frame = nframes - 1
-    mdtraj_trajfile.seek(start_frame)
-    current_frame = start_frame
-
-
-    #create an outputfile
-    ofile = open("cor_components.csv","w")
-    ofile.write("Frame, DG_CB_NP_HG,DG_CB_NP_H,DG_CB_DIR,DG_BA_PBC_HG,DG_BA_PBC_H,DG_BA_DIR,DG_PSUM,DG_COR\n")
-
-
-    while (current_frame <= end_frame):
-        print ("#Processing frame %s " % current_frame)
-
-        frames_xyz, cell_lengths, cell_angles = mdtraj_trajfile.read(n_frames=1)
-        system = updateSystemfromTraj(system, frames_xyz, cell_lengths, cell_angles)
-        #import pdb; pdb.set_trace()
-        # Now filter out solvent molecules
-        solutes, solvent, ions = SplitSoluteSolvent(system,ion_residues)
-        solutes, solvent = centerAll(solutes, solvent, system.property("space"))
-
-        ##################### PBC calculation ############################################
-        #print("#Poisson PBC calculation...")
-        #
-        DG_BA_PBC_HG = 0.0 * kcal_per_mol
-        #DG_BA_PBC_HG,s_xx_hg, s_yy_hg, s_zz_hg = PoissonPBC2(PoissonPBCSolverBin.val ,solutes, \
-        #                        system.property("space"),cutoff_dist.val.value(),\
-        #                        model_eps.val,
-        #                        current_frame,solute_ref, zerorefcharges=False)
-        #
-        DG_BA_PBC_HG_list.append(DG_BA_PBC_HG.value())
-        #
-        DG_BA_PBC_H_list.append(0.00)
-        # 
-        #print(DG_BA_PBC_HG,0.00)
-        #
-        ##################### NP calculation ############################################
-        #print ("#Poisson NP calculation... ")
-        # 
-        DG_CB_NP_HG = 0.0 * kcal_per_mol
-        # 
-        #DG_CB_NP_HG = PoissonNP2(PoissonNPSolverBin.val, solutes, bulk_eps.val,\
-        #                        current_frame, system.property("space"),\
-        #                        solute_ref,  s_xx_hg, s_yy_hg, s_zz_hg, zerorefcharges=False)
-        #print(DG_CB_NP_HG)
-        #if math.isnan(DG_CB_NP_HG.value()):
-        #    DG_CB_NP_HG = 0.0 * kcal_per_mol
-        DG_CB_NP_HG_list.append(DG_CB_NP_HG.value())
-        #
-        #
-        DG_CB_NP_H_list.append(0.00)
-        ##################################################################
+    
+    # Loop over lambda values
+    
+    U_dir_NP_list = []
+    U_dir_PBC_list = []
+    
         
-        print ("#Direct Summation")
+    for lambdaval in lambda_values : # lambda_values is a list of lambda values used during the discharge step that will have to be defined
+        
+        print("lambda is %s" % lambdaval)
+             
+        # go to lambda folder
+        
+        os.chdir('lambda-'+format(lambdaval, '.3f'))
+                
+        lambda_val = Parameter("lambda_val", lambdaval,
+                       """Value of the lambda parameter at which to evaluate free energy gradients.""")
+        
+        system.setConstant(lam, lambda_val.val)
+        
+        trajfile = Parameter("trajfile", "traj000000001.dcd",
+                    """File name of the trajectory to process.""")
+        
+           
+             
+        # Now loop over snapshots in dcd and accumulate energies
+        start_frame = 1
+        end_frame = 1000000000
+        step_frame = stepframe.val
 
-        Udir_cb2, Udir_pbc2 = DirectSummation2(solutes, system.property("space"),
+        #mdtraj_trajfile = mdtraj.open("../lambda-0.000/traj000000001.dcd",'r')
+        mdtraj_trajfile = mdtraj.open(trajfile.val,'r')
+        nframes = len(mdtraj_trajfile)
+
+        if end_frame > (nframes - 1):
+            end_frame = nframes - 1
+        mdtraj_trajfile.seek(start_frame)
+        current_frame = start_frame
+        
+        #create an outputfile
+        ofile = open("cor_components.csv","w")
+        ofile.write("Frame, DG_CB_NP_HG,DG_CB_NP_H,DG_CB_DIR,DG_BA_PBC_HG,DG_BA_PBC_H,DG_BA_DIR,DG_PSUM,DG_COR\n")
+        
+        
+        while (current_frame <= end_frame):
+            
+            print("#Processing frame %s " % current_frame)
+
+            frames_xyz, cell_lengths, cell_angles = mdtraj_trajfile.read(n_frames=1)
+            system = updateSystemfromTraj(system, frames_xyz, cell_lengths, cell_angles)
+        
+            # Now filter out solvent molecules
+            solutes, solvent, ions = SplitSoluteSolvent(system,ion_residues)
+            solutes, solvent = centerAll(solutes, solvent, system.property("space"))
+        
+            ## Calculating dGdir
+            
+            print("# Direct summation")
+            
+            
+            Udir_cb2, Udir_pbc2 = DirectSummation2(solutes, system.property("space"),
                                             cutoff_dist.val.value(), model_eps.val,
                                             current_frame, solute_ref)
-            
-        U_dir_CB_list.append(Udir_cb2.value())
-        U_dir_BA_list.append(Udir_pbc2.value())
-        print(Udir_cb2,Udir_pbc2)
         
-        # ############################################
-        # Compute psum
-        print ("#Psum correction... ")
-        DG_PSUM = SummationCorrection2(solutes, solvent, solute_ref,\
+        
+                
+            U_dir_NP_list.append(Udir_cb2.value())
+            U_dir_PBC_list.append(Udir_pbc2.value())
+            
+            # Compute psum for snapshots at lambda 0.0
+        
+            if lambda_val.val == 0.0 :
+        
+                print("#Psum correction... ")
+            
+                DG_PSUM = SummationCorrection2(solutes, solvent, solute_ref,\
                                     space, model_rho.val.value(),\
                                     model_eps.val, cutoff_dist.val.value())
 
-        DG_PSUM_list.append(DG_PSUM.value())
-        print(DG_PSUM)
-        ################################################################
-        #write everthing
-        dg_cor = (DG_CB_NP_HG.value()+Udir_cb2.value()) -\
-                 (DG_BA_PBC_HG.value()+Udir_pbc2.value()) + (DG_PSUM.value())
-
-        print(dg_cor)
-        DG_COR.append(dg_cor)
+                DG_PSUM_list.append(DG_PSUM.value())
+            
+            current_frame += step_frame
+            mdtraj_trajfile.seek(current_frame)
+            
+            
+        
+        #Only one potential value per lambda
+        
+        U_dir_NP_lambda_list.append(np.mean(U_dir_NP_list))
+        U_dir_PBC_lambda_list.append(np.mean(U_dir_PBC_list))
+        
+        os.chdir("../")
+        
+    # Integrate over lambda values to get DG_dir
     
-        ofile.write("%d,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f\n" %\
-                    (current_frame,DG_CB_NP_HG.value(),0.0,Udir_cb2.value(),DG_BA_PBC_HG.value(),0.0,\
-                    Udir_pbc2.value(),\
-                    DG_PSUM.value(),\
-                    dg_cor))
+    U_dir_NP = 0.0
+    U_dir_P = 0.0
+        
+    for i in range(1,len(U_dir_NP_lambda_list)) :
+        
+        pot_NP = ((U_dir_NP_lambda_list[i-1]+U_dir_NP_lambda_list[i])/2)*(lambda_values[i]-lambda_values[i-1])
+        pot_P = ((U_dir_PBC_lambda_list[i-1]+U_dir_PBC_lambda_list[i])/2)*(lambda_values[i]-lambda_values[i-1])
+        U_dir_NP += pot_NP
+        U_dir_P += pot_P
+        
+    DG_dir = U_dir_NP - U_dir_P
+                   
 
-        print("DG_COR  %.4f\n" %(dg_cor))
+    DG_psum = [np.mean(DG_PSUM_list),np.std(DG_PSUM_list)]
+    
+    print('DG_dir = ',DG_dir,'kcal mol-1')              
+                   
+    print('DG_psum = ',DG_psum, 'kcal mol-1')
 
-        current_frame += step_frame
-        mdtraj_trajfile.seek(current_frame)#step_frame, whence=1)
-
-ofile.close()
-#At the end compute the average
-oavg = open("cor_average.csv","w")
-
-dg_cb_np_hg = [np.mean(DG_CB_NP_HG_list),np.std(DG_CB_NP_HG_list)]
-dg_cb_np_h =[0.0,0.0]
-
-dg_cb_dir = [np.mean(U_dir_CB_list),np.std(U_dir_CB_list)]
-
-dg_ba_pbc_hg = [np.mean(DG_BA_PBC_HG_list),np.std(DG_BA_PBC_HG_list)]
-dg_ba_pbc_h = [0.0,0.0]
-
-dg_ba_dir = [np.mean(U_dir_BA_list),np.std(U_dir_BA_list)]
-
-dg_psum = [np.mean(DG_PSUM_list),np.std(DG_PSUM_list)]
-
-dg_cor = [np.mean(DG_COR),np.std(DG_COR)]
-
-oavg.write("<DG_CB_NP_HG>, err, <DG_CB_NP_H>, err, <Udir_NP>, err, <DG_BA_PBC_HG>,err, <DG_BA_PBC_H>,err,<DG_BA_DIR>,err,<DG_PSUM>,err,<DG_COR>,err\n")
-oavg.write("%.4f, %.4f,%.4f,%.4f,%.4f, %.4f, %.4f,%.4f, %.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f\n" %\
-            (dg_cb_np_hg[0],dg_cb_np_hg[1],dg_cb_np_h[0],dg_cb_np_h[1],dg_cb_dir[0],dg_cb_dir[1],\
-             dg_ba_pbc_hg[0],dg_ba_pbc_hg[1],dg_ba_pbc_h[0],dg_ba_pbc_h[1],\
-             dg_ba_dir[0],dg_ba_dir[1],\
-             dg_psum[0],dg_psum[1],\
-             dg_cor[0],dg_cor[1] )  )
-
-oavg.close()#tidy up everything
-#cmd ="rm -r poisson-*"
-#os.system(cmd)
-#cmd = "rm solute*.pdb"
-#os.systm(cmd)
+    
