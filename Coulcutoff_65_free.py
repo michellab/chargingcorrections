@@ -1202,6 +1202,10 @@ if __name__ == "__main__":
 
     DG_psum = [np.mean(DG_PSUM_list),np.std(DG_PSUM_list)]
     
+    dGdir_list = []
+    for i in range(len(U_dir_NP_lambda_list)):
+        dGdir_list.append(U_dir_NP_lambda_list[i]-U_dir_PBC_lambda_list[i])
+        
     print('DG_dir = ',DG_dir,'kcal mol-1')              
                    
     print('DG_psum = ',DG_psum, 'kcal mol-1')
