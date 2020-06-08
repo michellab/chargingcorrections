@@ -42,10 +42,12 @@ crdfile = Parameter("crdfile", "SYSTEM.crd",
 morphfile = Parameter("morphfile", "MORPH.pert",
                       """Name of the morph file containing the perturbation to apply to the system.""")
 
-#lambda_val = Parameter("lambda_val", 0.0,
-                       #"""Value of the lambda parameter at which to evaluate free energy gradients.""")
+lambda_val = Parameter("lambda_val", 0.0,
+                       """Value of the lambda parameter at which to evaluate free energy gradients.""")
 
 lambda_values = [0.000, 0.050, 0.100, 0.200, 0.300, 0.400, 0.500, 0.600, 0.700, 0.800, 0.900, 1.000]    
+
+perturbed_atoms=['O1','O2','C3','C7']
 
 shift_delta = Parameter("shift delta", 2.0,
                         """Value of the Lennard-Jones soft-core parameter.""")
@@ -920,6 +922,132 @@ def DirectSummation(solutes, space,
     Udir_pbc = Udir_pbc * kcal_per_mol
     return Udir_cb, Udir_pbc
 
+
+def DirectSummation3(solutes, space, cutoff, dielectric, framenum, solute_ref):
+    # For each state, the Non Periodic macro scheme and the Periodic RF scheme 
+    # We will compute the electrostatic energy between all solute atoms with full charges
+    # and the electrostatic energy between all non perturbed solute atoms
+    # (the charges of the pertubed atoms will be zeroed)
+    
+    # Initialise reaction-field parameters
+    krf = ( 1 / cutoff**3 ) * ( dielectric - 1.0 ) / ( 2 * dielectric + 1.0 )
+    crf = (1 / cutoff ) * (3 * dielectric / ( 2 * dielectric + 1.0 ) )
+  
+  
+    ## full charges
+    
+    
+    # select solute atoms
+    
+    coords = []
+    charges = []
+    sol_mols = solutes.molecules()
+    molnums = sol_mols.molNums()
+    for molnum in molnums:
+        mol = sol_mols.molecule(molnum).molecule()
+        atoms = mol.atoms()
+        for atom in atoms:
+            coord = atom.property("coordinates")
+            charge = atom.property("charge").value()
+            coords.append(coord)
+            charges.append(charge)
+            
+    print("charges PR =",charges)
+    
+    # Electrostatic energy calculation
+    
+    E_NonPeriod_PR = 0.0
+    E_Period_PR = 0.0
+    natoms = len(coords)
+    for i in range(0,natoms):
+        ri = coords[i]
+        qi = charges[i]
+        for j in range(i+1,natoms):
+            rj = coords[j]
+            qj = charges[j]
+            # Compute Coulombic energy
+            rij2_np = (rj[0]-ri[0])**2+(rj[1]-ri[1])**2+(rj[2]-ri[2])**2
+            rij_np = math.sqrt(rij2_np)
+            coul_nrg = one_over_four_pi_eps0 * ( (qi*qj) /rij_np )
+            # Compute Barker-Watts reaction field energy
+            rij_pbc = space.calcDist(ri,rj)
+            if rij_pbc > cutoff:
+                rf_nrg = 0.0
+            else:
+                rf_nrg =  qi*qj*one_over_four_pi_eps0 * ( 1/rij_pbc +\
+                                                          krf*rij_pbc**2 - crf )
+            E_NonPeriod_PR += coul_nrg
+            E_Period_PR += rf_nrg
+    
+    
+    ## Electrostatic interactions for the remaining atoms only
+    
+    # select solute remaining atoms
+    
+    
+    coords = []
+    charges = []
+    sol_mols = solutes.molecules()
+    molnums = sol_mols.molNums()
+    for molnum in molnums:
+        mol = sol_mols.molecule(molnum).molecule()
+        atoms = mol.atoms()
+        #perturbed_atoms=[atoms[0],atoms[1],atoms[2],atoms[3]]
+        for atom in atoms:
+            coord = atom.property("coordinates")
+            if atom.name().value() in perturbed_atoms:
+                charge = 0.0
+            else :        
+                charge = atom.property("charge").value()
+            charges.append(charge)
+            coords.append(coord)
+    
+    print("charges R =",charges)
+    
+    #electrostatic energy calculation
+    
+    E_NonPeriod_R = 0.0
+    E_Period_R = 0.0    
+    natoms = len(coords)
+    for i in range(0,natoms):
+        ri = coords[i]
+        qi = charges[i]
+        for j in range(i+1,natoms):
+            rj = coords[j]
+            qj = charges[j]
+            # Compute Coulombic energy
+            rij2_np = (rj[0]-ri[0])**2+(rj[1]-ri[1])**2+(rj[2]-ri[2])**2
+            rij_np = math.sqrt(rij2_np)
+            coul_nrg = one_over_four_pi_eps0 * ( (qi*qj) /rij_np )
+            # Compute Barker-Watts reaction field energy
+            rij_pbc = space.calcDist(ri,rj)
+            if rij_pbc > cutoff:
+                rf_nrg = 0.0
+            else:
+                rf_nrg =  qi*qj*one_over_four_pi_eps0 * ( 1/rij_pbc +\
+                                                          krf*rij_pbc**2 - crf )
+            E_NonPeriod_R += coul_nrg
+            E_Period_R += rf_nrg
+    
+    ## Calculation of the interaction between the perturbed and remaining atoms
+    
+    # Non periodic conditions  
+    
+    E_NonPeriod = E_NonPeriod_PR - E_NonPeriod_R
+    
+    # Periodic conditions
+    
+    E_Period = E_Period_PR - E_Period_R
+    
+    # Unit conversion
+    
+    E_NonPeriod = E_NonPeriod * kcal_per_mol
+    E_Period = E_Period * kcal_per_mol
+    
+    return E_NonPeriod, E_Period
+
+
+
 def ExcludedInteractions(solutes, space,
                          cutoff, dielectric,
                          framenum,  solute_ref, zerorefcharges=False):
@@ -1074,8 +1202,7 @@ if __name__ == "__main__":
     else:
         ion_residues=[]
         print("Ions are included in the calculation")
-        
-    
+
     # What to do with this...
     system = createSystemFreeEnergy(molecules)
     lam = Symbol("lambda")
@@ -1086,37 +1213,35 @@ if __name__ == "__main__":
     system.setComponent(lam, lambda_val.val)
     
     
-    U_dir_NP_lambda_list = []
-    U_dir_PBC_lambda_list = []
+    E_NonPeriod_lambda_list = []
+    E_Period_lambda_list = []
 
     DG_PSUM_list= []
 
     DG_COR = []
     
     # Loop over lambda values
-          
-        
+    
+    
     for lambdaval in lambda_values : # lambda_values is a list of lambda values used during the discharge step that will have to be defined
         
-        U_dir_NP_list = []
-        U_dir_PBC_list = []
-        
         print("lambda is %s" % lambdaval)
-             
+        
+        E_NonPeriod_list = []
+        E_Period_list = []
+                        
         # go to lambda folder
         
         os.chdir('lambda-'+format(lambdaval, '.3f'))
+        
                 
-        lambda_val = Parameter("lambda_val", lambdaval,
-                       """Value of the lambda parameter at which to evaluate free energy gradients.""")
-        
-        system.setConstant(lam, lambda_val.val)
-        
         trajfile = Parameter("trajfile", "traj000000001.dcd",
                     """File name of the trajectory to process.""")
         
-           
-             
+       
+        
+        print("#Direct Summation")
+        
         # Now loop over snapshots in dcd and accumulate energies
         start_frame = 1
         end_frame = 1000000000
@@ -1131,17 +1256,13 @@ if __name__ == "__main__":
         mdtraj_trajfile.seek(start_frame)
         current_frame = start_frame
         
-        #create an outputfile
-        ofile = open("cor_components.csv","w")
-        ofile.write("Frame, DG_CB_NP_HG,DG_CB_NP_H,DG_CB_DIR,DG_BA_PBC_HG,DG_BA_PBC_H,DG_BA_DIR,DG_PSUM,DG_COR\n")
         compteur_frames = 0
         
         while (current_frame <= end_frame):
             
-            print("#Processing frame %s " % current_frame)
+            print ("#Processing frame %s " % current_frame)
             
             compteur_frames+=1
-                        
 
             frames_xyz, cell_lengths, cell_angles = mdtraj_trajfile.read(n_frames=1)
             system = updateSystemfromTraj(system, frames_xyz, cell_lengths, cell_angles)
@@ -1150,25 +1271,21 @@ if __name__ == "__main__":
             solutes, solvent, ions = SplitSoluteSolvent(system,ion_residues)
             solutes, solvent = centerAll(solutes, solvent, system.property("space"))
         
-            ## Calculating dGdir
+            ##Calculating dGdir
             
             print("# Direct summation")
-            
-            
-            Udir_cb2, Udir_pbc2 = DirectSummation2(solutes, system.property("space"),
+        
+        
+            E_NonPeriod, E_Period = DirectSummation3(solutes, system.property("space"),
                                             cutoff_dist.val.value(), model_eps.val,
                                             current_frame, solute_ref)
+    
+            E_NonPeriod_list.append(E_NonPeriod.value())
+            E_Period_list.append(E_Period.value())
         
-        
-                
-            U_dir_NP_list.append(Udir_cb2.value())
-            U_dir_PBC_list.append(Udir_pbc2.value())
-            
-            
-            
             # Compute psum for snapshots at lambda 0.0
         
-            if lambda_val.val == 0.0 :
+            if lambdaval == 0.0 :
         
                 print("#Psum correction... ")
             
@@ -1179,45 +1296,43 @@ if __name__ == "__main__":
                 DG_PSUM_list.append(DG_PSUM.value())
             
             current_frame += step_frame
-            mdtraj_trajfile.seek(current_frame)
-            
-        print("n_frames = ",compteur_frames)
+            mdtraj_trajfile.seek(current_frame)# Compute psum for snapshots at lambda 0.0
         
-        #print('NP_list=',U_dir_NP_list)
-        #print('PBC_list=',U_dir_PBC_list)
+        print("n_frames = ",compteur_frames)   
         
         #Only one potential value per lambda
         
-        U_dir_NP_lambda_list.append(np.mean(U_dir_NP_list))
-        U_dir_PBC_lambda_list.append(np.mean(U_dir_PBC_list))
+        #print("E_NonPeriod = ",E_NonPeriod_list)
+        #print("E_Period = ",E_Period_list)
         
+        E_NonPeriod_lambda_list.append(np.mean(E_NonPeriod_list))
+        E_Period_lambda_list.append(np.mean(E_Period_list))
+            
         os.chdir("../")
         
+
     # Integrate over lambda values to get DG_dir
     
     U_dir_NP = 0.0
     U_dir_P = 0.0
         
-    for i in range(1,len(U_dir_NP_lambda_list)) :
-        
-        pot_NP = ((U_dir_NP_lambda_list[i-1]+U_dir_NP_lambda_list[i])/2)*(lambda_values[i]-lambda_values[i-1])
-        pot_P = ((U_dir_PBC_lambda_list[i-1]+U_dir_PBC_lambda_list[i])/2)*(lambda_values[i]-lambda_values[i-1])
+    for i in range(1,len(E_NonPeriod_lambda_list)):
+        pot_NP = ((E_NonPeriod_lambda_list[i-1]+E_NonPeriod_lambda_list[i])/2)*(lambda_values[i]-lambda_values[i-1])
+        pot_P = ((E_Period_lambda_list[i-1]+E_Period_lambda_list[i])/2)*(lambda_values[i]-lambda_values[i-1])
         U_dir_NP += pot_NP
         U_dir_P += pot_P
         
     DG_dir = U_dir_NP - U_dir_P
                    
-
     DG_psum = [round(np.mean(DG_PSUM_list),3),round(np.std(DG_PSUM_list),3)]
     
     dGdir_list = []
-    for i in range(len(U_dir_NP_lambda_list)):
-        dGdir_list.append(round(U_dir_NP_lambda_list[i]-U_dir_PBC_lambda_list[i],3))
+    for i in range(len(E_NonPeriod_lambda_list)):
+        dGdir_list.append(round(E_NonPeriod_lambda_list[i]-E_Period_lambda_list[i],3))
         
     print("dG_dir per increasing lambda value :",dGdir_list)   
         
     print('DG_dir = ',round(DG_dir,3),'kcal mol-1')              
                    
     print('DG_psum = ',DG_psum, 'kcal mol-1')
-
     

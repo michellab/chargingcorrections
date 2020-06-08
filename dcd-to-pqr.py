@@ -70,7 +70,7 @@ ligand_u.add_TopologyAttr(Charges(lambda_charges))
     
 # write pqr file
 
-ligand_u.atoms.write('../../pqr_snapshots/LIG_free_L_'+str(L)+'.pqr')
+ligand_u.atoms.write('pqr_snapshots/LIG_free_1st_L_'+str(L)+'.pqr', frames=[0])
 
 
 
