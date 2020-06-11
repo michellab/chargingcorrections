@@ -29,25 +29,25 @@ except ImportError:
 ## Free energy specific keywords
 cutoff_type = Parameter("cutoff type", "cutoffperiodic", """The cutoff method to use during the simulation.""")
 
-cutoff_dist = Parameter("cutoff distance", 12 * angstrom,
+cutoff_dist = Parameter("cutoff distance", 14 * angstrom,
                         """The cutoff distance to use for the non-bonded interactions.""")
 
-topfile = Parameter("topfile", "SYSTEM.top",
+topfile = Parameter("topfile", "../input/SYSTEM.top",
                     """File name of the topology file containing the system to be simulated.""")
 
-crdfile = Parameter("crdfile", "SYSTEM.crd",
+crdfile = Parameter("crdfile", "../input/SYSTEM.crd",
                     """File name of the coordinate file containing the coordinates of the
                        system to be simulated.""")
 
-morphfile = Parameter("morphfile", "MORPH.pert",
+morphfile = Parameter("morphfile", "../input/MORPH.pert",
                       """Name of the morph file containing the perturbation to apply to the system.""")
 
 lambda_val = Parameter("lambda_val", 0.0,
                        """Value of the lambda parameter at which to evaluate free energy gradients.""")
 
 lambda_values = [0.000, 0.050, 0.100, 0.200, 0.300, 0.400, 0.500, 0.600, 0.700, 0.800, 0.900, 1.000]    
+perturbed_atoms=['O1','O2','C3','C7','C4','C5','C6','C1','C2','O3','C8','O4','C9','H','H1','H2','H3','H4','H5','H6']
 
-perturbed_atoms=['O1','O2','C3','C7']
 
 shift_delta = Parameter("shift delta", 2.0,
                         """Value of the Lennard-Jones soft-core parameter.""")
@@ -74,7 +74,7 @@ stepframe = Parameter("step_frame",10000,
 neutralising_atmosphere = Parameter("neutralising_atmosphere",False,
     """Add a charged atmosphere around the host to neutralize its total charge.""")
 
-add_ions_PB = Parameter("add_ions_PB",True,
+add_ions_PB = Parameter("add_ions_PB",False,
     """Add explicit ions to the current frame for Poisson Boltzmann calculation.""")
 
 PoissonNPSolverBin= Parameter('PoissonNPSolverBin',"/home/steboss/local/apbs/bin/apbs",
@@ -1159,7 +1159,7 @@ def SummationCorrection2(solutes, solvent, solute_ref, space, rho_solvent_model,
                     nsolv += 1
             #print (nsolv)
             ONE_OVER_6PI_EPS0 = 290.98622868361923
-            nrg = -ONE_OVER_6PI_EPS0 * sol_charge * quadrupole_trace *\
+            nrg = -ONE_OVER_6PI_EPS0 * (-sol_charge) * quadrupole_trace *\
                   ( ( (2*(eps_solvent_model-1) / (2*eps_solvent_model+1) )*\
                       nsolv/(4*pi*(BAcutoff/10.0)**3/3.0) ) +\
                     (3/(2*eps_solvent_model+1)))
