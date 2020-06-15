@@ -1,0 +1,102 @@
+
+==============================================================
+Sending anonymous Sire usage statistics to http://siremol.org.
+For more information, see http://siremol.org/analytics
+To disable, set the environment variable 'SIRE_DONT_PHONEHOME' to 1
+To see the information sent, set the environment variable 
+SIRE_VERBOSE_PHONEHOME equal to 1. To silence this message, set
+the environment variable SIRE_SILENT_PHONEHOME to 1.
+==============================================================
+
+### Running electrostatics correction calculation on unknown ###
+Ions are  NOT included in the calculation
+Create the System...
+Selecting dummy groups
+lambda is 0.0
+#Direct Summation
+#Processing frame 1 
+# Direct summation
+charges PR = [-0.8183, 0.9202, -0.8183, -0.1066, -0.109, -0.154, -0.156, -0.159, 0.0911, -0.3422, 0.6621, -0.544, -0.2131, 0.08703, 0.08703, 0.08703, 0.142, 0.11, 0.109, 0.124]
+charges R = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+#Psum correction... 
+n_frames =  1
+lambda is 0.05
+#Direct Summation
+#Processing frame 1 
+# Direct summation
+charges PR = [-0.8183, 0.9202, -0.8183, -0.1066, -0.109, -0.154, -0.156, -0.159, 0.0911, -0.3422, 0.6621, -0.544, -0.2131, 0.08703, 0.08703, 0.08703, 0.142, 0.11, 0.109, 0.124]
+charges R = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+n_frames =  1
+lambda is 0.1
+#Direct Summation
+#Processing frame 1 
+# Direct summation
+charges PR = [-0.8183, 0.9202, -0.8183, -0.1066, -0.109, -0.154, -0.156, -0.159, 0.0911, -0.3422, 0.6621, -0.544, -0.2131, 0.08703, 0.08703, 0.08703, 0.142, 0.11, 0.109, 0.124]
+charges R = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+n_frames =  1
+lambda is 0.2
+#Direct Summation
+#Processing frame 1 
+# Direct summation
+charges PR = [-0.8183, 0.9202, -0.8183, -0.1066, -0.109, -0.154, -0.156, -0.159, 0.0911, -0.3422, 0.6621, -0.544, -0.2131, 0.08703, 0.08703, 0.08703, 0.142, 0.11, 0.109, 0.124]
+charges R = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+n_frames =  1
+lambda is 0.3
+#Direct Summation
+#Processing frame 1 
+# Direct summation
+charges PR = [-0.8183, 0.9202, -0.8183, -0.1066, -0.109, -0.154, -0.156, -0.159, 0.0911, -0.3422, 0.6621, -0.544, -0.2131, 0.08703, 0.08703, 0.08703, 0.142, 0.11, 0.109, 0.124]
+charges R = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+n_frames =  1
+lambda is 0.4
+#Direct Summation
+#Processing frame 1 
+# Direct summation
+charges PR = [-0.8183, 0.9202, -0.8183, -0.1066, -0.109, -0.154, -0.156, -0.159, 0.0911, -0.3422, 0.6621, -0.544, -0.2131, 0.08703, 0.08703, 0.08703, 0.142, 0.11, 0.109, 0.124]
+charges R = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+n_frames =  1
+lambda is 0.5
+#Direct Summation
+#Processing frame 1 
+# Direct summation
+charges PR = [-0.8183, 0.9202, -0.8183, -0.1066, -0.109, -0.154, -0.156, -0.159, 0.0911, -0.3422, 0.6621, -0.544, -0.2131, 0.08703, 0.08703, 0.08703, 0.142, 0.11, 0.109, 0.124]
+charges R = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+n_frames =  1
+lambda is 0.6
+#Direct Summation
+#Processing frame 1 
+# Direct summation
+charges PR = [-0.8183, 0.9202, -0.8183, -0.1066, -0.109, -0.154, -0.156, -0.159, 0.0911, -0.3422, 0.6621, -0.544, -0.2131, 0.08703, 0.08703, 0.08703, 0.142, 0.11, 0.109, 0.124]
+charges R = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+n_frames =  1
+lambda is 0.7
+#Direct Summation
+#Processing frame 1 
+# Direct summation
+charges PR = [-0.8183, 0.9202, -0.8183, -0.1066, -0.109, -0.154, -0.156, -0.159, 0.0911, -0.3422, 0.6621, -0.544, -0.2131, 0.08703, 0.08703, 0.08703, 0.142, 0.11, 0.109, 0.124]
+charges R = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+n_frames =  1
+lambda is 0.8
+#Direct Summation
+#Processing frame 1 
+# Direct summation
+charges PR = [-0.8183, 0.9202, -0.8183, -0.1066, -0.109, -0.154, -0.156, -0.159, 0.0911, -0.3422, 0.6621, -0.544, -0.2131, 0.08703, 0.08703, 0.08703, 0.142, 0.11, 0.109, 0.124]
+charges R = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+n_frames =  1
+lambda is 0.9
+#Direct Summation
+#Processing frame 1 
+# Direct summation
+charges PR = [-0.8183, 0.9202, -0.8183, -0.1066, -0.109, -0.154, -0.156, -0.159, 0.0911, -0.3422, 0.6621, -0.544, -0.2131, 0.08703, 0.08703, 0.08703, 0.142, 0.11, 0.109, 0.124]
+charges R = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+n_frames =  1
+lambda is 1.0
+#Direct Summation
+#Processing frame 1 
+# Direct summation
+charges PR = [-0.8183, 0.9202, -0.8183, -0.1066, -0.109, -0.154, -0.156, -0.159, 0.0911, -0.3422, 0.6621, -0.544, -0.2131, 0.08703, 0.08703, 0.08703, 0.142, 0.11, 0.109, 0.124]
+charges R = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+n_frames =  1
+dG_dir per increasing lambda value : [-40.282, -40.131, -40.371, -40.189, -40.209, -40.235, -40.305, -40.206, -40.248, -40.265, -40.203, -40.244]
+DG_dir =  -40.24 kcal mol-1
+DG_psum =  [-15.818, 0.0] kcal mol-1

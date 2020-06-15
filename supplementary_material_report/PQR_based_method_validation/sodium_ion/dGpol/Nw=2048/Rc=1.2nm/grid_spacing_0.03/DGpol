@@ -1,0 +1,35 @@
+
+********RESULTS NPBC********
+
+DG_NPBC_SLV [kJ/mol]: 7005.759
+
+DG_NPBC_VAC [kJ/mol]: 7354.113
+
+DG_NPBC [kJ/mol]: -348.354
+
+
+********RESULTS PBC********
+
+DG_PBC_SLV [kJ/mol]: 2269.928
+
+DG_PBC_VAC [kJ/mol]: 2569.382
+
+DG_PBC [kJ/mol]: -299.454
+
+
+********RESULTS FFT PBC********
+
+DG_FFT_LS [kJ/mol]: -294.955
+
+DG_FFT_BM [kJ/mol]: -257.128
+
+DG_FFT [kJ/mol]: -37.826
+
+
+********RESULTS NPBC - PBC********
+
+DGpol [kJ/mol]: -86.727
+
+**********************
+
+

@@ -1,0 +1,10 @@
+@pqr ../pqr_snapshots/ASA_unbound_L_0.2.pqr
+@coordinates 3.053226162    3.385833362    3.554595941
+@atoms 1:a
+@atomsTOcharge 1:1-4
+@schemeELEC RF
+@rcut 1.4
+@epsRF 61
+@epsSOLV 61
+@gridspacing 0.04
+@verbose log_L_0.2.dat

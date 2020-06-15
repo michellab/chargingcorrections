@@ -1,0 +1,3 @@
+# atom   nres   name    charge        NPBC_SLV        NPBC_VAC         PBC_SLV         PBC_VAC      FFT_LS_PBC      FFT_RF_PBC
+     1      1     NA    0.8000    6485.3808126    7059.9487005    6485.3424203    6980.1131288    -469.9965414    -425.9622792
+

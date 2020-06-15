@@ -1,0 +1,11 @@
+@pqr ../../../../pqr/sodium_ion_Q_1.0.pqr
+@coordinates 3.94 3.94 3.94
+@atoms a
+@atomsTOcharge a
+@schemeELEC RF
+@rcut 1.2
+@epsRF 66.6
+@epsSOLV 66.6
+@epsNPBC 78.0
+@gridspacing 0.03
+@verbose log.dat
