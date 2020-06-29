@@ -951,8 +951,8 @@ def DirectSummation3(solutes, space, cutoff, dielectric, framenum, solute_ref):
             charge = atom.property("charge").value()
             coords.append(coord)
             charges.append(charge)
-            
-    print("charges PR =",charges)
+
+    #print("charges PR =",charges)
     
     # Electrostatic energy calculation
     
@@ -995,14 +995,14 @@ def DirectSummation3(solutes, space, cutoff, dielectric, framenum, solute_ref):
         #perturbed_atoms=[atoms[0],atoms[1],atoms[2],atoms[3]]
         for atom in atoms:
             coord = atom.property("coordinates")
-            if atom.name().value() in perturbed_atoms:
+            if (mol.name().value() == 'LIG') and (atom.name().value() in perturbed_atoms) :
                 charge = 0.0
             else :        
                 charge = atom.property("charge").value()
             charges.append(charge)
             coords.append(coord)
     
-    print("charges R =",charges)
+    #print("charges R =",charges)
     
     #electrostatic energy calculation
     
@@ -1043,6 +1043,17 @@ def DirectSummation3(solutes, space, cutoff, dielectric, framenum, solute_ref):
     
     E_NonPeriod = E_NonPeriod * kcal_per_mol
     E_Period = E_Period * kcal_per_mol
+    
+    #print("E_NonPeriod_PR = ", E_NonPeriod_PR * kcal_per_mol)
+    #print("E_NonPeriod_R = ", E_NonPeriod_R * kcal_per_mol)
+    #print("E_NonPeriod = ", E_NonPeriod)
+    
+    
+    #print("E_Period_PR = ", E_Period_PR * kcal_per_mol)
+    #print("E_Period_R = ", E_Period_R * kcal_per_mol)
+    #print("E_Period = ", E_Period)
+    
+    #print("U_dir = ", E_NonPeriod - E_Period)
     
     return E_NonPeriod, E_Period
 
